@@ -29,9 +29,9 @@ pub struct VariableStore {
 }
 
 /// A variable store with an associated path for variables naming.
-#[derive(Copy, Debug, Clone)]
+#[derive(Debug, Clone)]
 pub struct VariableName<'s> {
-    path: &'s str,
+    path: Vec<String>,
     store: &'s VariableStore,
 }
 
