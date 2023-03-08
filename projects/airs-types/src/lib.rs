@@ -1,8 +1,10 @@
-pub use errors::{AirsErrorKind, Result};
+pub use errors::{AirsErrorKind, AirsResult};
+
+pub use crate::device::Device;
 
 mod errors;
 mod data_type;
-
-pub struct Device {}
+mod variable;
+mod device;
 
 pub trait Module {}
