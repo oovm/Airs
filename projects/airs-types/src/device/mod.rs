@@ -1,2 +1,4 @@
 #[derive(Debug)]
-pub struct Device {}
+pub enum  Device {
+    CPU
+}

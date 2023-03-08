@@ -2,3 +2,7 @@
 fn ready() {
     println!("it works!")
 }
+
+
+
+mod variable;

@@ -17,7 +17,7 @@ pub struct Variables {
     // pub trainable_variables: Vec<Var>,
 }
 
-#[derive(Default)]
+#[derive(Debug, Default)]
 pub struct Tensor {}
 
 /// A VarStore is used to store variables used by one or multiple layers.
@@ -29,10 +29,9 @@ pub struct VariableStore {
 }
 
 /// A variable store with an associated path for variables naming.
-#[derive(Debug, Clone)]
+#[derive(Copy, Debug, Clone)]
 pub struct VariableName<'s> {
-    path: Vec<String>,
-    group: usize,
+    path: &'s str,
     store: &'s VariableStore,
 }
 
@@ -44,7 +43,6 @@ impl VariableStore {
             device,
         }
     }
-
 }
 
 
