@@ -29,20 +29,15 @@ pub struct VariableStore {
 }
 
 /// A variable store with an associated path for variables naming.
-#[derive(Debug, Clone)]
+#[derive(Clone)]
 pub struct VariableName<'s> {
     path: Vec<String>,
+    index: u8,
     store: &'s VariableStore,
 }
 
-
 impl VariableStore {
     pub fn new(device: Device) -> Self {
-        Self {
-            variables: DashMap::new(),
-            device,
-        }
+        Self { variables: DashMap::new(), device }
     }
 }
-
-

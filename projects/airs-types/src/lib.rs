@@ -1,12 +1,13 @@
-pub use crate::data_type::DataType;
-pub use crate::device::Device;
-pub use crate::errors::{AirsErrorKind, AirsResult};
-pub use crate::module::Module;
-pub use crate::variable::{VARIABLE_NAME_SEPARATOR, VariableName, VariableStore};
+pub use crate::{
+    data_type::DataType,
+    device::Device,
+    errors::{AirsError, AirsErrorKind, AirsResult},
+    module::Module,
+    variable::{VariableName, VariableStore, VARIABLE_NAME_SEPARATOR},
+};
 
-mod errors;
 mod data_type;
-mod variable;
 mod device;
+mod errors;
 mod module;
-
+mod variable;
