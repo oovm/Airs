@@ -6,7 +6,7 @@ use std::{
 
 pub type AirsResult<T = ()> = Result<T, AirsErrorKind>;
 
-#[derive()]
+#[derive(Debug)]
 pub struct AirsError {
     pub kind: Box<AirsErrorKind>,
 }
@@ -16,19 +16,22 @@ pub enum AirsErrorKind {
     IoError { path: PathBuf, raw: std::io::Error },
 }
 
-impl Debug for AirsError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        todo!()
-    }
-}
+impl Error for AirsError {}
 
 impl Display for AirsError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        todo!()
+        Display::fmt(&self.kind, f)
     }
 }
-
-impl Error for AirsError {}
+impl Display for AirsErrorKind {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        match self {
+            AirsErrorKind::IoError { path, raw } => {
+                write!(f, "io error: {} ({:?})", raw, path)
+            }
+        }
+    }
+}
 
 impl From<std::io::Error> for AirsErrorKind {
     fn from(raw: std::io::Error) -> Self {
