@@ -1,3 +1,4 @@
+use crate::Tensor;
 use std::{
     fmt::{Debug, Display, Formatter, Write},
     ops::Div,

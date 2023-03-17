@@ -2,7 +2,7 @@ use std::ops::Add;
 
 use dashmap::DashMap;
 
-use crate::Device;
+use crate::{Device, Tensor};
 
 mod names;
 
@@ -16,9 +16,6 @@ pub struct Variables {
     // pub named_variables: HashMap<String, Tensor>,
     // pub trainable_variables: Vec<Var>,
 }
-
-#[derive(Debug, Default)]
-pub struct Tensor {}
 
 /// A VarStore is used to store variables used by one or multiple layers.
 /// It specifies a single device where all variables are stored.

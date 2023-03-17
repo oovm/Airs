@@ -1,5 +1,5 @@
 [package]
-name = "airs-layers"
+name = "airis"
 version = "0.0.0"
 authors = ["Aster <192607617@qq.com>"]
 description = "..."
@@ -10,15 +10,13 @@ license = "MPL-2.0"
 edition = "2021"
 
 [dependencies]
-dashmap = "5.4.0"
-wgpu = "0.15.1"
 
-[dependencies.serde]
-version = "1.0.152"
-features = ["derive"]
+[dependencies.airs-layers]
+version = "0.0.*"
+path = "../airs-layers"
 
 [dependencies.airs-types]
-version = "0.0.0"
+version = "0.0.*"
 path = "../airs-types"
 
 [dev-dependencies]

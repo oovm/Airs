@@ -1,5 +1,5 @@
 [package]
-name = "airis-device"
+name = "airs-types"
 version = "0.0.0"
 authors = ["Aster <192607617@qq.com>"]
 description = "..."
@@ -11,6 +11,9 @@ edition = "2021"
 
 [dependencies]
 dashmap = "5.4.0"
+ndarray = { version = "0.15.6", optional = true }
+image = { version = "0.24.5", optional = true }
+safetensors = "0.3.0"
 
 [dependencies.serde]
 version = "1.0.152"
@@ -19,4 +22,4 @@ features = ["derive"]
 [dev-dependencies]
 
 [features]
-default = []
+default = ["image", "ndarray"]
